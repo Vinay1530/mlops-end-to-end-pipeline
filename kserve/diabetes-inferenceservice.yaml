@@ -1,0 +1,9 @@
+apiVersion: serving.kserve.io/v1beta1
+kind: InferenceService
+metadata:
+  name: diabetes-detection
+spec:
+  predictor:
+    sklearn:
+      storageUri: "http://172.31.224.1:8080/model.joblib"
+
