@@ -67,12 +67,12 @@ jobs:
         run: docker push $DOCKER_HUB_USERNAME/$IMAGE_NAME:latest
 
       # Optional Kubernetes deployment
-      #- name: Set up kubectl
-      #  uses: azure/setup-kubectl@v3
-      #  with:
-      #    version: 'v1.28.0'
+      - name: Set up kubectl
+        uses: azure/setup-kubectl@v3
+        with:
+          version: 'v1.28.0'
 
-      #- name: Deploy to Kubernetes
-      #  run: |
-      #    kubectl apply -f k8s/
+      - name: Deploy to Kubernetes
+        run: |
+          kubectl apply -f k8s/
 
