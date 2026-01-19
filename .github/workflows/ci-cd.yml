@@ -74,6 +74,8 @@ jobs:
 
       - name: Configure kubeconfig
         run: |
+          mkdir -p ~/.kube
+          echo "${{ secrets.KUBECONFIG_DATA }}" > ~/.kube/config
           echo "${{ secrets.KUBECONFIG_DATA }}" | base64 -d > kubeconfig
           export KUBECONFIG=$PWD/kubeconfig
 
